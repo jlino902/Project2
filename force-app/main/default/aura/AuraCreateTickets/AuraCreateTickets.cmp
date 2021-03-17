@@ -1,0 +1,14 @@
+<aura:component controller="CaseController" implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="fields" type="String[]" 
+                    default="['Type', 'Product_Category__c', 'ContactId', 'Subject', 'Description']"/>
+    
+    <lightning:layout>
+        
+        <lightning:layoutItem size="5" padding="around-small">
+            <h1>CREATE TICKET</h1>
+            <lightning:recordForm objectApiName="Case"
+                                  fields="{!v.fields}"/>
+        </lightning:layoutItem>
+        
+    </lightning:layout>
+</aura:component>

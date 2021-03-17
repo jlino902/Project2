@@ -1,0 +1,16 @@
+<aura:component controller="CaseController" implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="myData" type="Case[]"/>
+    <aura:attribute name="columns" type="List"/>
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <lightning:layout>
+        <lightning:layoutItem size="12" padding="around-small">
+            <h1>PAST TICKETS</h1>
+            <lightning:datatable keyField="Id" 
+                                 data="{! v.myData }" 
+                                 columns="{! v.columns }" 
+                                 hideCheckboxColumn="true"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>
