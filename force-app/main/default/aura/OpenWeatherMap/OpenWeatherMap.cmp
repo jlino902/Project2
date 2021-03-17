@@ -1,0 +1,7 @@
+<aura:component controller="RESTConsumption" implements="forceCommunity:availableForAllPageTypes" access="global">>
+    <aura:attribute name="response" type="String"/>
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <p><lightning:formattedText value="{!v.response}"/></p>
+</aura:component>
