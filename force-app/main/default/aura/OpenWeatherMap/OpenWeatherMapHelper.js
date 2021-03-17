@@ -1,13 +1,11 @@
 ({
-    getData : function(cmp) 
+    getData : function(component) 
     {
-        var action = cmp.get('c.OpenWeatherMap');
+        var action = component.get('c.openWeatherMap');
         action.setCallback(this, $A.getCallback(function (response) {
             var state = response.getState();
             if (state === "SUCCESS") {
-                console.log("THIS IS THE CONSOLE LOG METHOD");
-                console.log(response.getReturnValue());
-                cmp.set('v.response', response.getReturnValue());
+                component.set('v.response', response.getReturnValue());
             } else if (state === "ERROR") {
                 var errors = response.getError();
                 console.error(errors);
